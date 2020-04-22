@@ -1,27 +1,26 @@
 <template>
   <div id="app">
-    <Hello :msg="msg1"></Hello>
-    <Hello :msg="msg2"></Hello>
+    <Hello :msg = 'msg'></Hello>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import Hello from './components/Hello'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     Hello,
   },
   data(){
-    return {
-      msg1:'ninxxx',
-      msg2:'xxxdfadf',
-    }
+    return this.$parent.$data
+  },
+  watch:{
+
   },
 }
+
+
 </script>
 
 <style>

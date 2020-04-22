@@ -1,6 +1,7 @@
 <template>
     <div class="hello">
         <p>{{msg}}</p>
+        <p v-html="rawHtml">fff</p>
     </div>
 </template>
 
@@ -8,7 +9,8 @@
     export default {
         name: "Hello",
         props: {
-            msg: String
+            msg: String,
+            rawHtml:String,
         },
         watch:{
             myInput:function () {
