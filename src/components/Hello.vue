@@ -6,13 +6,15 @@
 
         <p v-html=rawHtml></p>
         <p v-on:click.alt=toast>点我弹窗</p>
-        <p v-on="rawHtml">VON</p>
 
         <ul>
-            <li v-for="item in items" v-bind:key="item" @click="toast(tstr(item.msg))">
+            <li v-for="(item,index) in items" :key="index" @click="toast(tstr(item.msg))">
                 {{item.msg}}
             </li>
         </ul>
+
+        <input v-model="amsg" placeholder="edit me">
+        <p>Message is {{amsg}}</p>
     </div>
 </template>
 
@@ -34,17 +36,20 @@
                 ],
                 seen:false,
                 seeme:true,
+                amsg:'',
             }
         },
         watch:{
             msg(newval, oldval){
                 console.log('old' + oldval)
                 console.log('new' + newval)
+                console.log(this.amsg)
             }
         },
         methods:{
             toast(v){
-                alert(v)
+                alert('hello ' + v)
+                this.$emit("dodo", v)
             },
             tstr(v) {
               return v + 'xxxxx.......'

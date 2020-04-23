@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Hello :msg = 'msg'></Hello>
+    <Hello :msg = 'msg' @dodo="dodo"></Hello>
     <p v-bind:class="color">{{msg}}</p>
   </div>
 </template>
@@ -33,7 +33,13 @@ export default {
   },
   updated(){
     console.log('updated')
-  }
+  },
+  methods:{
+    dodo(v) {
+      console.log(v)
+      alert('dodo ' + v)
+    },
+  },
 }
 
 

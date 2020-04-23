@@ -15,18 +15,17 @@ var data = {
 new Vue({
   render: h => h(App),
   data:data,
-
 }).$mount('#app')
 
 
-function add() {
-  data.msg = (new Date).toTimeString()
-  if (data.color == 'blue') {
-    data.color = 'red'
-  } else {
-    data.color = 'blue'
-  }
-  // console.log(data.msg)
-}
+// function add() {
+//   data.msg = (new Date).toTimeString()
+//   if (data.color == 'blue') {
+//     data.color = 'red'
+//   } else {
+//     data.color = 'blue'
+//   }
+//   // console.log(data.msg)
+// }
 
-self.setInterval(add, 1000)
+// self.setInterval(add, 1000)
