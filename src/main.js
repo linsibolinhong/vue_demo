@@ -7,7 +7,8 @@ Vue.config.productionTip = false
 
 var data = {
   msg : 'vadsafdqq2131231',
-  rawHtml:'<span style="color:red">This is Red</span>'
+  rawHtml:'<span style="color:red">This is Red</span>',
+  color:'red',
 };
 
 
@@ -20,7 +21,12 @@ new Vue({
 
 function add() {
   data.msg = (new Date).toTimeString()
-  console.log(data.msg)
+  if (data.color == 'blue') {
+    data.color = 'red'
+  } else {
+    data.color = 'blue'
+  }
+  // console.log(data.msg)
 }
 
 self.setInterval(add, 1000)

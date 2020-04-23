@@ -1,7 +1,7 @@
 <template>
     <div class="hello">
-        <p>{{msg}}</p>
-        <p v-html="rawHtml">fff</p>
+        <p v-if="seen">{{msg}}</p>
+        <p v-html='rawHtml'></p>
     </div>
 </template>
 
@@ -10,11 +10,25 @@
         name: "Hello",
         props: {
             msg: String,
-            rawHtml:String,
+            rawHtml:{
+                type:String,
+                default:'<span style="color:red">This is Red</span>'
+            },
+        },
+        data(){
+            return {
+                seen:false,
+            }
         },
         watch:{
-            myInput:function () {
-                console.log(this.msg)
+            msg(newval, oldval){
+                console.log('old' + oldval)
+                console.log('new' + newval)
+            }
+        },
+        method:{
+            click(){
+                console.log(this.$data)
             }
         }
     }

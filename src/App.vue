@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Hello :msg = 'msg'></Hello>
+    <p v-bind:class="color">{{msg}}</p>
   </div>
 </template>
 
@@ -15,21 +16,30 @@ export default {
   data(){
     return this.$parent.$data
   },
-  watch:{
-
+  beforeCreate() {
+    console.log('before create')
   },
+  created(){
+    console.log('created')
+  },
+  beforeMount() {
+    console.log('before mounte')
+  },
+  mounted() {
+    console.log('mounted')
+  },
+  beforeUpdate() {
+    console.log('before update')
+  },
+  updated(){
+    console.log('updated')
+  }
 }
 
 
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .red {color:red}
+  .blue {color:blue}
 </style>
