@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 
 Vue.config.productionTip = false
@@ -10,6 +12,7 @@ var data = {
   rawHtml:'<span style="color:red">This is Red</span>'
 };
 
+Vue.use(ElementUI);
 
 new Vue({
   render: h => h(App),

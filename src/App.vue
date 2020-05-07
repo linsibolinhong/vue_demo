@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Hello :msg = 'msg'></Hello>
+    <test></test>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
+import test from './element_components/test'
 
 export default {
   name: 'App',
   components: {
     Hello,
+    test,
   },
   data(){
     return this.$parent.$data
